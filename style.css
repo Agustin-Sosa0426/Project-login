@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px 100px;
+    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://us.123rf.com/450wm/benzoix/benzoix1804/benzoix180401128/99990391-resumen-azul-oscuro-liso-con-vi%C3%B1eta-negra-studio-bien-se-usa-como-fondo-informe-comercial-digital.jpg?ver=6) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.logo {
+    font-size: 32px;
+    color: rgb(32, 38, 38);
+    user-select: none;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 17px;
+    color: rgb(32, 38, 38);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 45px;
+}
+
+.navigation .btnLogin-popup {
+    height: 50px;
+    width: 130px;
+    background:transparent;
+    font-size: 17px;
+    border: 2px solid rgb(32, 38, 38);
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: rgb(32, 38, 38);
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .8s;
+}
+
+.navigation a::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -6px;
+    background-color: rgb(26, 26, 24);
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: .8s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+.btnLogin-popup:hover {
+    background-color: rgb(12, 217, 217);
+    color: rgb(32, 38, 38);
+}
+
+.wrapper {
+    position: relative;
+    height: 440px;
+    width: 400px;
+    border: 2px solid rgb(37, 37, 37);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgb(185, 216, 218);
+    background: transparent;
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: height .2s ease;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 45px;
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+.wrapper .form-box.login {
+    position: absolute;
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+.wrapper.form-box.register {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+ }
+
+.wrapper .icon-close {
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    top: 0;
+    right: 0;
+    background: rgb(37, 37, 37);
+    color: white;
+    font-size: 32px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-bottom-left-radius: 25px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.input-box {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    margin: 30px 0;
+    border-bottom: 2px solid rgb(37, 37, 37);
+}
+
+
+.form-box h2 {
+    font-size: 32px;
+    text-align: center;
+    color: rgb(37, 37, 37);
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: .8s;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(37, 37, 37);
+    pointer-events: none;  
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: 6px;
+}
+
+.input-box input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: rgb(37, 37, 37);
+    padding: 0 30px 0 5px;
+    font-size: 16px;
+    font-weight: 600;
+    
+
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8.5px;
+    line-height: 45px;
+    font-size: 20px;
+    color: rgb(37, 37, 37);
+}
+
+.btn {
+    height: 45px;
+    width: 100%;
+    cursor: pointer;
+    background: rgb(37, 37, 37);
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    outline: none;
+
+}
+
+.remember-forgot {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(37, 37, 37);
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot  label input {
+    accent-color: rgb(37, 37, 37);
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: rgb(37, 37, 37);
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.login-register {
+    font-size: 14px;
+    color: rgb(37, 37, 37);
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: rgb(37, 37, 37);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
